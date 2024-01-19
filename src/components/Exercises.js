@@ -9,19 +9,6 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const exercisesPerPage = 9;
 
-  const indexOfLastExercise = currentPage * exercisesPerPage;
-  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = exercises.slice(
-    indexOfFirstExercise,
-    indexOfLastExercise
-  );
-
-  const paginate = (e, value) => {
-    setCurrentPage(value);
-
-    window.scrollTo({ top: 1800, behavior: "smooth" });
-  };
-
   useEffect(() => {
     const fetchExercisesData = async () => {
       let exercisesData = [];
@@ -44,10 +31,28 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     fetchExercisesData();
   }, [bodyPart]);
 
+  const indexOfLastExercise = currentPage * exercisesPerPage;
+  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+  const currentExercises = exercises.slice(
+    indexOfFirstExercise,
+    indexOfLastExercise
+  );
+
+  const paginate = (e, value) => {
+    setCurrentPage(value);
+
+    window.scrollTo({ top: 1800, behavior: "smooth" });
+  };
+
   return (
     <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
-      <Typography variant="h3" mb="46px">
-        Showing Result
+      <Typography
+        variant="h4"
+        fontWeight="bold"
+        sx={{ fontSize: { lg: "44px", xs: "30px" } }}
+        mb="46px"
+      >
+        Showing Results
       </Typography>
 
       <Stack

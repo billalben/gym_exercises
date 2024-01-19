@@ -33,10 +33,14 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
               alt={item.video?.title || "Video Title Not Available"}
             />
             <Box>
-              <Typography variant="h5" color="#000">
-                {item.video?.title}
+              <Typography
+                sx={{ fontSize: { lg: "28px", xs: "18px" } }}
+                fontWeight={600}
+                color="#000"
+              >
+                {item.video.title}
               </Typography>
-              <Typography variant="h6" color="#000" style={{ opacity: "0.8" }}>
+              <Typography fontSize="14px" color="#000">
                 {item.video?.channelName}
               </Typography>
             </Box>
