@@ -1,3 +1,7 @@
+# Gym Exercise
+
+This project is a modern web application built using React and Create React App. It leverages several popular libraries and tools to provide a rich user experience, including Material-UI for styling, React Router for navigation, and various other dependencies for additional functionality. The project also integrates with an API from Rapid API, with the API key securely managed using a .env file.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
